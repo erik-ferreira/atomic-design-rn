@@ -7,18 +7,20 @@ import {
   SaveIcon,
 } from "../../../global/styles/icons"
 
+import { ButtonIcon } from "../../atoms/ButtonIcon"
+
 import { styles } from "../../../pages/Feed/styles"
 
 export function PostOptions() {
   return (
     <View style={styles.postOptions}>
       <View style={styles.postOptionsSide}>
-        <FavoriteIcon style={styles.postOptionsIcon} />
-        <CommentIcon style={styles.postOptionsIcon} />
-        <MessengerIcon style={styles.postOptionsIcon} />
+        <ButtonIcon icon={FavoriteIcon} />
+        <ButtonIcon icon={CommentIcon} />
+        <ButtonIcon icon={MessengerIcon} />
       </View>
 
-      <SaveIcon />
+      <ButtonIcon icon={SaveIcon} />
     </View>
   )
 }

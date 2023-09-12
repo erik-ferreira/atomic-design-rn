@@ -11,7 +11,6 @@ import {
 
 import { Posts } from "../../components/templates/Posts"
 
-import { posts } from "../../utils/posts"
 import { profiles } from "../../utils/profiles"
 
 import { styles } from "./styles"

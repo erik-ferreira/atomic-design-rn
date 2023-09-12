@@ -1,4 +1,8 @@
-import { View, Text, Image } from "react-native"
+import { View } from "react-native"
+
+import { PostAvatar } from "../../atoms/PostAvatar"
+import { PostUsername } from "../../atoms/PostUsername"
+import { PostLocation } from "../../atoms/PostLocation"
 
 import { ProfileIcon } from "../../../global/styles/icons"
 
@@ -12,10 +16,11 @@ interface PostHeaderProps {
 export function PostHeader({ username, location }: PostHeaderProps) {
   return (
     <View style={styles.postHeader}>
-      <Image source={ProfileIcon} style={styles.postAvatar} />
+      <PostAvatar source={ProfileIcon} />
+
       <View>
-        <Text style={styles.postUsername}>{username}</Text>
-        <Text style={styles.postLocation}>{location}</Text>
+        <PostUsername username={username} />
+        <PostLocation location={location} />
       </View>
     </View>
   )
