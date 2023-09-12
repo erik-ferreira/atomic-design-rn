@@ -1,12 +1,11 @@
-import { View, Text, Image, ImageProps } from "react-native"
+import { View, ImageProps } from "react-native"
 
-import {
-  MessengerIcon,
-  FavoriteIcon,
-  CommentIcon,
-  SaveIcon,
-  ProfileIcon,
-} from "../../../global/styles/icons"
+import { PostPhoto } from "../../atoms/PostPhoto"
+import { PostDescription } from "../../atoms/PostDescription"
+
+import { PostAbout } from "../../molecules/PostAbout"
+import { PostHeader } from "../../molecules/PostHeader"
+import { PostOptions } from "../../molecules/PostOptions"
 
 import { styles } from "../../../pages/Feed/styles"
 
@@ -33,32 +32,16 @@ interface PostProps {
 export function Post({ data }: PostProps) {
   return (
     <View style={styles.post}>
-      <View style={styles.postHeader}>
-        <Image source={ProfileIcon} style={styles.postAvatar} />
-        <View>
-          <Text style={styles.postUsername}>{data.username}</Text>
-          <Text style={styles.postLocation}>{data.location}</Text>
-        </View>
-      </View>
+      <PostHeader username={data.username} location={data.location} />
 
-      <Image source={data.cover} style={styles.cover} />
+      <PostPhoto source={data.cover} />
 
       <View style={styles.postFooter}>
-        <View style={styles.postOptions}>
-          <View style={styles.postOptionsSide}>
-            <FavoriteIcon style={styles.postOptionsIcon} />
-            <CommentIcon style={styles.postOptionsIcon} />
-            <MessengerIcon style={styles.postOptionsIcon} />
-          </View>
+        <PostOptions />
 
-          <SaveIcon />
-        </View>
+        <PostAbout lastLikedAvatar={data.lastLiked.avatar} likes={data.likes} />
 
-        <View style={styles.postAbout}>
-          <Image source={data.lastLiked.avatar} style={styles.lastLiked} />
-          <Text style={styles.likes}>{data.likes}</Text>
-        </View>
-        <Text style={styles.description}>{data.description}</Text>
+        <PostDescription description={data.description} />
       </View>
     </View>
   )
