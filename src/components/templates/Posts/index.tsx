@@ -1,12 +1,14 @@
 import { FlatList } from "react-native"
 
-import { Post } from "../../organisms/Post"
+import { Post, PostData } from "../../organisms/Post"
 
-import { posts } from "../../../utils/posts"
+import { styles } from "./styles"
 
-import { styles } from "../../../pages/Feed/styles"
+interface PostsProps {
+  posts: PostData[]
+}
 
-export function Posts() {
+export function Posts({ posts }: PostsProps) {
   return (
     <FlatList
       data={posts}

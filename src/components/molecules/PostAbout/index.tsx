@@ -3,7 +3,7 @@ import { View, Text, Image, ImageProps } from "react-native"
 import { PostLikes } from "../../atoms/PostLikes"
 import { PostLikedAvatar } from "../../atoms/PostLikedAvatar"
 
-import { styles } from "../../../pages/Feed/styles"
+import { styles } from "./styles"
 
 interface PostAboutProps {
   lastLikedAvatar: ImageProps

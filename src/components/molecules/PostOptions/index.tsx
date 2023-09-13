@@ -9,7 +9,7 @@ import {
 
 import { ButtonIcon } from "../../atoms/ButtonIcon"
 
-import { styles } from "../../../pages/Feed/styles"
+import { styles } from "./styles"
 
 export function PostOptions() {
   return (

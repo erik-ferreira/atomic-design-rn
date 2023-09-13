@@ -1,6 +1,6 @@
 import { Image, ImageProps } from "react-native"
 
-import { styles } from "../../../pages/Feed/styles"
+import { styles } from "./styles"
 
 interface PostAvatarProps extends ImageProps {}
 

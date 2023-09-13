@@ -7,7 +7,7 @@ import { PostAbout } from "../../molecules/PostAbout"
 import { PostHeader } from "../../molecules/PostHeader"
 import { PostOptions } from "../../molecules/PostOptions"
 
-import { styles } from "../../../pages/Feed/styles"
+import { styles } from "./styles"
 
 export interface ProfileData {
   id: string

@@ -1,6 +1,6 @@
 import { Text, TextProps } from "react-native"
 
-import { styles } from "../../../pages/Feed/styles"
+import { styles } from "./styles"
 
 interface PostLocationProps extends TextProps {
   location: string
