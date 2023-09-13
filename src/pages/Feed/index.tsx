@@ -1,6 +1,6 @@
 import React from "react"
 
-import { View, Text, Image, FlatList } from "react-native"
+import { View } from "react-native"
 
 import {
   MessengerIcon,
@@ -10,6 +10,7 @@ import {
 } from "../../global/styles/icons"
 
 import { Posts } from "../../components/templates/Posts"
+import { Stories } from "../../components/templates/Stories"
 
 import { posts } from "../../utils/posts"
 import { profiles } from "../../utils/profiles"
@@ -32,21 +33,7 @@ export function Feed() {
         </View>
       </View>
 
-      <View style={styles.stories}>
-        <FlatList
-          data={profiles}
-          horizontal
-          showsHorizontalScrollIndicator={false}
-          contentContainerStyle={styles.profiles}
-          keyExtractor={(profile) => profile.id}
-          renderItem={({ item }) => (
-            <View style={styles.profile}>
-              <Image source={item.avatar} />
-              <Text style={styles.username}>{item.name}</Text>
-            </View>
-          )}
-        />
-      </View>
+      <Stories stories={profiles} />
 
       <Posts posts={posts} />
     </View>
